@@ -1,5 +1,6 @@
 package com.example.documentmanagementservice.controller;
 
+import com.example.documentmanagementservice.dto.ErrorResponse;
 import com.example.documentmanagementservice.dto.GenerateDocumentRequest;
 import com.example.documentmanagementservice.dto.GenerateDocumentResponse;
 import com.example.documentmanagementservice.entity.Document;
@@ -22,15 +23,16 @@ public class DocumentController {
     private final DocumentRepository documentRepository;
 
     @PostMapping("/generate")
-    public ResponseEntity<GenerateDocumentResponse> generateDocument(@RequestBody GenerateDocumentRequest request) {
+    public ResponseEntity<?> generateDocument(@RequestBody GenerateDocumentRequest request) {
         try {
             GenerateDocumentResponse response = documentService.generateDocument(request);
             return ResponseEntity.ok(response);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(new GenerateDocumentResponse(null, "❌ Error: " + e.getMessage()));
+                    .body(new ErrorResponse("Document generation failed", e.getMessage()));
         }
     }
+
 
     @GetMapping("/{uuid}")
     public ResponseEntity<Resource> downloadDocument(@PathVariable String uuid) {

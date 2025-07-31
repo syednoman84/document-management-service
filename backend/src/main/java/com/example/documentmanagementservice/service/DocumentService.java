@@ -68,17 +68,33 @@ public class DocumentService {
         }
 
         String savedPath = fileStorageService.save(finalContent, fileName);
+        String templateName = request.getTemplateName();
+        String templatePath = inputType.toLowerCase() + "/" + templateName;
 
         Document doc = new Document(
                 fileName,
                 outputType,
                 finalContent.length,
                 savedPath,
-                DocumentSource.SYSTEM_GENERATED
+                DocumentSource.SYSTEM_GENERATED,
+                templateName,
+                templatePath
         );
         documentRepository.save(doc);
 
-        return new GenerateDocumentResponse(doc.getUuid(), "/documents/" + doc.getUuid());
+        return new GenerateDocumentResponse(
+                doc.getUuid(),
+                doc.getFileName(),
+                doc.getFileType(),
+                doc.getFileSize(),
+                doc.getFilePath(),
+                doc.getSource(),
+                doc.getStatus(),
+                doc.getCreatedAt(),
+                doc.getTemplateName(),
+                doc.getTemplatePath(),
+                "/documents/" + doc.getUuid()
+        );
     }
 
     private String fillPlaceholders(String template, Map<String, Object> params) {
