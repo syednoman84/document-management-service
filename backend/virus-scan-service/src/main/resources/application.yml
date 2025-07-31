@@ -1,0 +1,19 @@
+server:
+  port: 8081
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+rabbitmq:
+  exchange: document.direct.exchange
+  upload-queue: document.upload.queue
+  scanned-queue: virus.scan.result.queue
+  routing:
+    upload: document.uploaded
+    scanned: document.scanned
+
+

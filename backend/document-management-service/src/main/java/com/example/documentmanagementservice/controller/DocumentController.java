@@ -11,6 +11,7 @@ import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 
@@ -63,5 +64,17 @@ public class DocumentController {
                 .contentType(mediaType)
                 .body(resource);
     }
+
+    @PostMapping("/upload")
+    public ResponseEntity<?> uploadDocument(@RequestParam("file") MultipartFile file) {
+        try {
+            Document doc = documentService.uploadUserDocument(file);
+            return ResponseEntity.ok(doc);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(new ErrorResponse("File upload failed", e.getMessage()));
+        }
+    }
+
 }
 
