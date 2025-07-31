@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/dms_db
+    username: root
+    password: rootroot
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+server:
+  port: 8080
+
+document:
+  github:
+    base-url: https://raw.githubusercontent.com/syednoman84/documents-templates-config/master/
+    template-paths:
+      html: html/
+      pdf: pdf/
+      docx: docx/
+  storage:
+    type: local  # options: local, sftp, s3
+    local-path: ./files
