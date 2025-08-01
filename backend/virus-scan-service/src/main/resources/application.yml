@@ -7,6 +7,17 @@ spring:
     port: 5672
     username: guest
     password: guest
+  datasource:
+    url: jdbc:mysql://localhost:3306/virusscan_db
+    username: root
+    password: rootroot
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
 
 rabbitmq:
   exchange: document.direct.exchange
