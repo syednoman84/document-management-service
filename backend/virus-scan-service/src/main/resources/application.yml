@@ -7,6 +7,7 @@ spring:
     port: 5672
     username: guest
     password: guest
+
   datasource:
     url: jdbc:mysql://localhost:3306/virusscan_db
     username: root
@@ -26,5 +27,3 @@ rabbitmq:
   routing:
     upload: document.uploaded
     scanned: document.scanned
-
-

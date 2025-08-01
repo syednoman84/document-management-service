@@ -1,5 +1,6 @@
 package com.example.virusscanservice.listener;
 
+import com.example.virusscanservice.config.RabbitMQConfig;
 import com.example.virusscanservice.dto.DocumentUploadedEvent;
 import com.example.virusscanservice.dto.ScanResultEvent;
 import com.example.virusscanservice.entity.ScanLog;
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.util.Random;
-
+import org.springframework.amqp.core.Message;
 @Component
 @RequiredArgsConstructor
 public class VirusScanListener {
@@ -30,7 +31,10 @@ public class VirusScanListener {
     public void onDocumentUploaded(DocumentUploadedEvent event) {
         System.out.println("🔍 Received upload event: " + event);
 
-        String scanResult = new Random().nextBoolean() ? "ACCEPTED" : "REJECTED";
+        // Simulate failure
+        throw new RuntimeException("💥 Simulated failure to test DLQ");
+
+        /*String scanResult = new Random().nextBoolean() ? "ACCEPTED" : "REJECTED";
 
         // Save scan result
         ScanLog log = ScanLog.builder()
@@ -44,6 +48,16 @@ public class VirusScanListener {
         ScanResultEvent result = new ScanResultEvent(event.getDocumentId(), scanResult);
 
         rabbitTemplate.convertAndSend(exchange, scannedRoutingKey, result);
-        System.out.println("📤 Scan result published: " + result);
+        System.out.println("📤 Scan result published: " + result);*/
     }
+
+
+    @RabbitListener(queues = RabbitMQConfig.DEAD_LETTER_QUEUE)
+    public void handleDeadLetterQueue(Message message) {
+        System.err.println("⚠️ Raw message in DLQ:");
+        System.err.println("Headers: " + message.getMessageProperties().getHeaders());
+        System.err.println("Body: " + new String(message.getBody()));
+    }
+
+
 }
