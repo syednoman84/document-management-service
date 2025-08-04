@@ -68,12 +68,6 @@ During system document generation, templates are dynamically fetched based on `t
 
 ---
 
-## 📸 Screenshots
-
-> ✨ UI Screenshots will go here if desired (upload later)
-
----
-
 ## 📑 API Summary
 
 ### `document-management-service`
@@ -180,23 +174,16 @@ document-management-service/
 virus-scan-service/
 frontend/
 ```
-
 ---
 
-## 🤝 Contributions
+## 📸 Screenshots
 
-Pull requests welcome. For major changes, open an issue first to discuss what you would like to change.
+<img width="1421" height="735" alt="image" src="https://github.com/user-attachments/assets/457287ac-b428-4b9d-8e14-e990cfabe3e4" />
+<img width="1419" height="653" alt="image" src="https://github.com/user-attachments/assets/933ca99e-39ae-4366-adf1-48e68aeadb7c" />
+<img width="1423" height="724" alt="image" src="https://github.com/user-attachments/assets/083720b0-8a53-40c4-8ac6-7a5133d08fa6" />
+<img width="1418" height="691" alt="image" src="https://github.com/user-attachments/assets/fbf99a57-1579-4737-9ccb-e9df7a649c75" />
+<img width="1416" height="684" alt="image" src="https://github.com/user-attachments/assets/2ac4f487-9382-4bcf-9284-7f391443c952" />
 
----
 
-## 🧾 License
 
-MIT License (Optional)
 
----
-
-## 👤 Author
-
-**Syed Noman Ahmed**  
-📧 [syednoman84@gmail.com](mailto:syednoman84@gmail.com)  
-🔗 GitHub: [syednoman84](https://github.com/syednoman84)
