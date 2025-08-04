@@ -1,0 +1,38 @@
+.scan-log-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.scan-log-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.scan-log-table th,
+.scan-log-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.scan-log-table th {
+  background-color: #f2f2f2;
+}
+
+.success {
+  background-color: #e6ffed;
+}
+
+.failed {
+  background-color: #ffe6e6;
+}
+
+.error {
+  color: red;
+  margin-top: 1rem;
+}

@@ -1,0 +1,47 @@
+.generate-doc-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.generate-doc-container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.json-textarea {
+  width: 100%;
+  padding: 1rem;
+  font-family: monospace;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  background: #f9f9f9;
+}
+
+.generate-btn {
+  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+
+.generate-btn:hover {
+  background-color: #45a049;
+}
+
+.message {
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: bold;
+}

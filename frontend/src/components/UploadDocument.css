@@ -1,0 +1,66 @@
+.upload-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.upload-box {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.upload-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.upload-btn:hover {
+  background-color: #0056b3;
+}
+
+.status-text {
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.upload-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.upload-table th,
+.upload-table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.upload-table th {
+  background-color: #f4f4f4;
+}
+
+.status-submitted {
+  color: #ffc107;
+  font-weight: bold;
+}
+
+.status-scanned_clean {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.status-scanned_infected {
+  color: #dc3545;
+  font-weight: bold;
+}

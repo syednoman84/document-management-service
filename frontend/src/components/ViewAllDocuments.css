@@ -1,0 +1,53 @@
+.document-history-container {
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.document-history-container h2 {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+
+.document-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.document-table th,
+.document-table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.document-table th {
+  background-color: #f4f6f9;
+}
+
+.document-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.error {
+  color: red;
+  margin-bottom: 1rem;
+}
+
+.download-icon {
+  cursor: pointer;
+  color: #007bff;
+  font-size: 1.2rem;
+  transition: transform 0.1s ease;
+}
+
+.download-icon:hover {
+  transform: scale(1.2);
+  color: #0056b3;
+}
+
+
+
+
