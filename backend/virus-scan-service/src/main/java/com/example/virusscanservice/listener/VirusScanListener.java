@@ -32,9 +32,9 @@ public class VirusScanListener {
         System.out.println("🔍 Received upload event: " + event);
 
         // Simulate failure
-        throw new RuntimeException("💥 Simulated failure to test DLQ");
+//        throw new RuntimeException("💥 Simulated failure to test DLQ");
 
-        /*String scanResult = new Random().nextBoolean() ? "ACCEPTED" : "REJECTED";
+        String scanResult = new Random().nextBoolean() ? "ACCEPTED" : "REJECTED";
 
         // Save scan result
         ScanLog log = ScanLog.builder()
@@ -48,7 +48,7 @@ public class VirusScanListener {
         ScanResultEvent result = new ScanResultEvent(event.getDocumentId(), scanResult);
 
         rabbitTemplate.convertAndSend(exchange, scannedRoutingKey, result);
-        System.out.println("📤 Scan result published: " + result);*/
+        System.out.println("📤 Scan result published: " + result);
     }
 
 

@@ -1,5 +1,6 @@
 package com.example.documentmanagementservice.controller;
 
+import com.example.documentmanagementservice.dto.DocumentDto;
 import com.example.documentmanagementservice.dto.ErrorResponse;
 import com.example.documentmanagementservice.dto.GenerateDocumentRequest;
 import com.example.documentmanagementservice.dto.GenerateDocumentResponse;
@@ -9,11 +10,13 @@ import com.example.documentmanagementservice.service.DocumentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.util.List;
 
 @RestController
 @RequestMapping("/documents")
@@ -74,6 +77,15 @@ public class DocumentController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(new ErrorResponse("File upload failed", e.getMessage()));
         }
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<DocumentDto>> getAllDocuments() {
+        List<Document> docs = documentRepository.findAll(Sort.by(Sort.Direction.DESC, "createdAt"));
+        List<DocumentDto> response = docs.stream()
+                .map(DocumentDto::new)
+                .toList();
+        return ResponseEntity.ok(response);
     }
 
 }
