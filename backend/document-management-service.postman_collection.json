@@ -1,0 +1,323 @@
+{
+	"info": {
+		"_postman_id": "515fcc78-bf65-4efe-99fd-185950d96381",
+		"name": "document-management-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13380147"
+	},
+	"item": [
+		{
+			"name": "generateDoc-HTML-PDF",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"templateName\": \"invoice.html\",\n    \"inputType\": \"HTML\",\n    \"outputType\": \"PDF\",\n    \"parameters\": {\n      \"invoiceNumber\": \"HTML-20250732\",\n      \"invoiceDate\": \"2025-07-31\",\n      \"customerName\": \"Juliahtml\",\n      \"customerEmail\": \"juliahtml@example.com\",\n      \"itemDescription\": \"Car Rental\",\n      \"itemQty\": \"1\",\n      \"itemPrice\": \"10000.00\",\n      \"amountDue\": \"4000.00\"\n    }\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/documents/generate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"documents",
+						"generate"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8080/documents/generate \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"templateName\": \"invoice.html\",\n    \"templateType\": \"PDF\",\n    \"parameters\": {\n      \"invoiceNumber\": \"INV-20250730\",\n      \"invoiceDate\": \"2025-07-30\",\n      \"customerName\": \"Syed Noman Ahmed\",\n      \"customerEmail\": \"syed@example.com\",\n      \"itemDescription\": \"Web Development Services\",\n      \"itemQty\": \"1\",\n      \"itemPrice\": \"5000.00\",\n      \"amountDue\": \"5000.00\"\n    }\n  }'\n"
+			},
+			"response": []
+		},
+		{
+			"name": "generateDoc-HTML-HTML",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"templateName\": \"invoice.html\",\n    \"inputType\": \"HTML\",\n    \"outputType\": \"PDF\",\n    \"parameters\": {\n      \"invoiceNumber\": \"HTML-20250732\",\n      \"invoiceDate\": \"2025-07-31\",\n      \"customerName\": \"Juliahtml\",\n      \"customerEmail\": \"juliahtml@example.com\",\n      \"itemDescription\": \"Car Rental\",\n      \"itemQty\": \"1\",\n      \"itemPrice\": \"10000.00\",\n      \"amountDue\": \"4000.00\"\n    }\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/documents/generate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"documents",
+						"generate"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8080/documents/generate \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"templateName\": \"invoice.html\",\n    \"templateType\": \"PDF\",\n    \"parameters\": {\n      \"invoiceNumber\": \"INV-20250730\",\n      \"invoiceDate\": \"2025-07-30\",\n      \"customerName\": \"Syed Noman Ahmed\",\n      \"customerEmail\": \"syed@example.com\",\n      \"itemDescription\": \"Web Development Services\",\n      \"itemQty\": \"1\",\n      \"itemPrice\": \"5000.00\",\n      \"amountDue\": \"5000.00\"\n    }\n  }'\n"
+			},
+			"response": []
+		},
+		{
+			"name": "generateDoc-PDF-PDF",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"templateName\": \"invoice-pdf.html\",\n    \"inputType\": \"PDF\", // this will read html but from pdf/ directory\n    \"outputType\": \"PDF\",\n    \"parameters\": {\n      \"invoiceNumber\": \"PDF-20250732\",\n      \"invoiceDate\": \"2025-07-31\",\n      \"customerName\": \"JuliaPDF\",\n      \"customerEmail\": \"juliapdf@example.com\",\n      \"itemDescription\": \"PDF Description\",\n      \"itemQty\": \"2\",\n      \"itemPrice\": \"9999.00\",\n      \"amountDue\": \"909.00\"\n    }\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/documents/generate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"documents",
+						"generate"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8080/documents/generate \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"templateName\": \"invoice.html\",\n    \"templateType\": \"PDF\",\n    \"parameters\": {\n      \"invoiceNumber\": \"INV-20250730\",\n      \"invoiceDate\": \"2025-07-30\",\n      \"customerName\": \"Syed Noman Ahmed\",\n      \"customerEmail\": \"syed@example.com\",\n      \"itemDescription\": \"Web Development Services\",\n      \"itemQty\": \"1\",\n      \"itemPrice\": \"5000.00\",\n      \"amountDue\": \"5000.00\"\n    }\n  }'\n"
+			},
+			"response": []
+		},
+		{
+			"name": "generateDoc-DOCX-DOCX",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"templateName\": \"contract-doc.docx\",\n    \"inputType\": \"DOCX\",\n    \"outputType\": \"DOCX\",\n    \"parameters\": {\n        \"invoiceNumber\": \"DOCX-101\",\n        \"invoiceDate\": \"2025-08-01\",\n        \"customerName\": \"Ali Raza DOCX\",\n        \"customerEmail\": \"aliDOCX@example.com\",\n        \"itemDescription\": \"Mobile App Design\",\n        \"itemQty\": \"2\",\n        \"itemPrice\": \"1500.00\",\n        \"amountDue\": \"3000.00\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/documents/generate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"documents",
+						"generate"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8080/documents/generate \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"templateName\": \"invoice.html\",\n    \"templateType\": \"PDF\",\n    \"parameters\": {\n      \"invoiceNumber\": \"INV-20250730\",\n      \"invoiceDate\": \"2025-07-30\",\n      \"customerName\": \"Syed Noman Ahmed\",\n      \"customerEmail\": \"syed@example.com\",\n      \"itemDescription\": \"Web Development Services\",\n      \"itemQty\": \"1\",\n      \"itemPrice\": \"5000.00\",\n      \"amountDue\": \"5000.00\"\n    }\n  }'\n"
+			},
+			"response": []
+		},
+		{
+			"name": "generateDoc-DOCX-PDF",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"templateName\": \"contract-doc.docx\",\n    \"inputType\": \"DOCX\",\n    \"outputType\": \"PDF\",\n    \"parameters\": {\n        \"invoiceNumber\": \"DOCXPDF-101\",\n        \"invoiceDate\": \"2025-08-01\",\n        \"customerName\": \"Ali Raza DOCXPDF\",\n        \"customerEmail\": \"aliDOCX@example.com\",\n        \"itemDescription\": \"Mobile App Design\",\n        \"itemQty\": \"2\",\n        \"itemPrice\": \"1500.00\",\n        \"amountDue\": \"3000.00\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/documents/generate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"documents",
+						"generate"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8080/documents/generate \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"templateName\": \"invoice.html\",\n    \"templateType\": \"PDF\",\n    \"parameters\": {\n      \"invoiceNumber\": \"INV-20250730\",\n      \"invoiceDate\": \"2025-07-30\",\n      \"customerName\": \"Syed Noman Ahmed\",\n      \"customerEmail\": \"syed@example.com\",\n      \"itemDescription\": \"Web Development Services\",\n      \"itemQty\": \"1\",\n      \"itemPrice\": \"5000.00\",\n      \"amountDue\": \"5000.00\"\n    }\n  }'\n"
+			},
+			"response": []
+		},
+		{
+			"name": "uploadFile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/NomanAhmed/Documents/Noman/code/github/documents-templates-config/docx/contract-doc.docx"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/documents/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"documents",
+						"upload"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8080/api/documents/upload \\\n  -F \"file=@/path/to/your/file.pdf\"\n"
+			},
+			"response": []
+		},
+		{
+			"name": "getDoc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/documents/fda5f839-0338-403f-8580-dc1d4ea9b8fb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"documents",
+						"fda5f839-0338-403f-8580-dc1d4ea9b8fb"
+					]
+				},
+				"description": "Generated from cURL: curl -O http://localhost:8080/documents/33175369-65c4-4b7c-b27f-a8a522449877\n"
+			},
+			"response": []
+		},
+		{
+			"name": "getAllDocs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/documents/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"documents",
+						"all"
+					]
+				},
+				"description": "Generated from cURL: curl -O http://localhost:8080/documents/33175369-65c4-4b7c-b27f-a8a522449877\n"
+			},
+			"response": []
+		},
+		{
+			"name": "getDeadLetters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/admin/deadletters",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"admin",
+						"deadletters"
+					]
+				},
+				"description": "Generated from cURL: curl -O http://localhost:8080/documents/33175369-65c4-4b7c-b27f-a8a522449877\n"
+			},
+			"response": []
+		},
+		{
+			"name": "getScanResultsByDocId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/scan-logs/3f6ea905-1b23-4971-9b9d-036820fda575",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"scan-logs",
+						"3f6ea905-1b23-4971-9b9d-036820fda575"
+					]
+				},
+				"description": "Generated from cURL: curl -O http://localhost:8080/documents/33175369-65c4-4b7c-b27f-a8a522449877\n"
+			},
+			"response": []
+		},
+		{
+			"name": "getScanResultsAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/scan-logs/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"scan-logs",
+						"all"
+					]
+				},
+				"description": "Generated from cURL: curl -O http://localhost:8080/documents/33175369-65c4-4b7c-b27f-a8a522449877\n"
+			},
+			"response": []
+		}
+	]
+}
