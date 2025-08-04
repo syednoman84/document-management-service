@@ -26,7 +26,12 @@ A full-stack Document Management System that allows users to upload documents, g
 - Expose API to:
   - View all scan logs (success/failure)
 
----
+## <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman" width="30" style="vertical-align: middle;" /> Postman Collection
+
+- https://github.com/syednoman84/document-management-service/blob/master/backend/document-management-service.postman_collection.json
+
+  
+
 
 ## 🌐 React Frontend (`/frontend`)
 A sleek user interface for:
