@@ -5,6 +5,7 @@ import UploadDocument from "./components/UploadDocument";
 import GenerateDocument from "./components/GenerateDocument";
 import ViewAllDocuments from "./components/ViewAllDocuments";
 import ViewScanLogs from "./components/ViewScanLogs";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <Navbar />
       <div className="main-container">
         <Routes>
-          <Route path="/" element={<Navigate to="/upload" />} />
+          <Route path="/" element={<Home />} />
           <Route path="/upload" element={<UploadDocument />} />
           <Route path="/generate" element={<GenerateDocument />} />
           <Route path="/documents" element={<ViewAllDocuments />} />
